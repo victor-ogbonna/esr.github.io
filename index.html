@@ -43,6 +43,12 @@
 
         h1, h2, h3 {
             color: #0056b3;
+            animation: mechMove 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes mechMove {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
         }
 
         ul {
