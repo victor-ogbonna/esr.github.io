@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Systems and Robotics Nigeria | ESR-Nig.</title>
+    <meta name="description" content="Alleviating Technology Depravity in Nigeria through STEM education in Embedded Systems and Robotics">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
             --dark: #0a0a12;
             --darker: #050508;
             --light: #e0e0e0;
-            --neon-glow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px rgba(0, 240, 255, 0.3);
+            --neon-glow: 0 0 10px var(--primary);
             --section-bg: rgba(15, 15, 25, 0.7);
         }
 
@@ -30,101 +31,50 @@
             font-family: 'Roboto Mono', monospace;
             background-color: var(--dark);
             color: var(--light);
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(255, 45, 117, 0.1) 0%, transparent 20%),
-                linear-gradient(to bottom, var(--darker), var(--dark));
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Header with animated circuit board effect */
+        /* Simplified header */
         header {
-            background: 
-                linear-gradient(to right, rgba(10, 10, 18, 0.9), rgba(5, 5, 8, 0.95)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="45" width="10" height="10" fill="%2300f0ff"/><rect x="45" y="20" width="10" height="10" fill="%2300f0ff"/><rect x="45" y="40" width="10" height="10" fill="%2300f0ff"/><rect x="45" y="60" width="10" height="10" fill="%2300f0ff"/><rect x="45" y="80" width="10" height="10" fill="%2300f0ff"/><rect y="45" width="10" height="10" fill="%2300f0ff"/><rect x="20" y="45" width="10" height="10" fill="%2300f0ff"/><rect x="40" y="45" width="10" height="10" fill="%2300f0ff"/><rect x="60" y="45" width="10" height="10" fill="%2300f0ff"/><rect x="80" y="45" width="10" height="10" fill="%2300f0ff"/></svg>');
+            background: var(--darker);
             color: #fff;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             text-align: center;
             position: relative;
             border-bottom: 1px solid var(--primary);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
-            z-index: 100;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--primary), transparent);
-            animation: scanline 3s linear infinite;
-        }
-
-        @keyframes scanline {
-            0% { top: 0; opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { top: 100%; opacity: 0.5; }
         }
 
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         h1 {
             color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 0.5rem;
             text-shadow: var(--neon-glow);
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--primary), transparent);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
         }
 
         h2 {
             color: var(--accent);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 1rem;
         }
 
         h2::before, h2::after {
             content: "//";
             color: var(--secondary);
-            margin: 0 10px;
-        }
-
-        h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            margin: 0 5px;
         }
 
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
             margin-top: 1rem;
         }
 
@@ -133,448 +83,196 @@
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: 500;
-            letter-spacing: 1px;
-            padding: 0.5rem 1rem;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
             color: var(--primary);
-            text-shadow: 0 0 10px var(--primary);
-            border-color: var(--primary);
         }
 
-        nav a::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        nav a:hover::before {
-            left: 100%;
-        }
-
-        /* Main content sections with holographic effect */
+        /* Main content sections */
         section {
-            padding: 3rem 2rem;
-            margin: 2rem auto;
-            max-width: 1200px;
+            padding: 2rem 1rem;
+            margin: 1rem auto;
+            max-width: min(1200px, 95%);
             background: var(--section-bg);
-            backdrop-filter: blur(10px);
             border-radius: 8px;
             border: 1px solid rgba(0, 240, 255, 0.2);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 
-                        inset 0 0 20px rgba(0, 240, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent 0%,
-                transparent 45%,
-                rgba(0, 240, 255, 0.05) 50%,
-                transparent 55%,
-                transparent 100%
-            );
-            transform: rotate(30deg);
-            animation: shine 6s infinite linear;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.3), 
-                       inset 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
         p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Futuristic list items */
+        /* List items */
         ul {
             list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 1rem 0;
+            padding: 0;
         }
 
         ul li {
             background: rgba(0, 0, 0, 0.3);
             color: var(--light);
-            margin: 1rem 0;
-            padding: 1.2rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--primary);
-            position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        ul li:hover {
-            transform: translateX(10px);
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-        }
-
-        ul li::before {
-            content: ">";
-            position: absolute;
-            left: -20px;
-            color: var(--primary);
-            font-weight: bold;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        ul li:hover::before {
-            left: -15px;
-            opacity: 1;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border-left: 2px solid var(--primary);
         }
 
         ul li strong {
             color: var(--accent);
-            font-weight: 500;
         }
 
         /* Project Gallery */
         .project-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem auto;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
         .project-card {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
             overflow: hidden;
             border: 1px solid rgba(0, 240, 255, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
-            border-color: var(--primary);
         }
 
         .project-img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            background: #222;
+            display: block;
         }
 
         .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-
-        .project-info p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .project-tag {
-            background: rgba(0, 240, 255, 0.1);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            border: 1px solid var(--primary);
+            padding: 1rem;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.8rem;
+            padding: 0.6rem 1.2rem;
             background: rgba(0, 240, 255, 0.1);
             color: var(--primary);
             border: 1px solid var(--primary);
             border-radius: 4px;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 0.3rem;
             transition: all 0.3s ease;
-            cursor: pointer;
-            margin: 0.5rem;
-            text-align: center;
         }
 
         .btn:hover {
-            background: rgba(0, 240, 255, 0.3);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--darker);
-            border-color: var(--accent);
-        }
-
-        .btn-accent:hover {
-            background: #ffd700;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+            background: rgba(0, 240, 255, 0.2);
         }
 
         .btn-group {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
 
         /* Leadership section */
         .leadership {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
         .leader-card {
             background: rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 1rem;
+            border-radius: 4px;
             text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .leader-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
         }
 
         .leader-img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .leader-title {
-            color: var(--accent);
-            font-size: 1rem;
+            border: 2px solid var(--primary);
             margin-bottom: 0.5rem;
+            background: #333;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Contact section with interactive elements */
+        /* Contact section */
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .contact-method {
             background: rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 4px;
             text-align: center;
         }
 
-        .contact-method:hover {
-            background: rgba(0, 0, 0, 0.5);
-            border-color: var(--primary);
-        }
-
-        .contact-method i {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        /* Futuristic footer */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            background: rgba(5, 5, 8, 0.9);
+            padding: 1.5rem;
+            background: var(--darker);
             color: var(--light);
-            border-top: 1px solid rgba(0, 240, 255, 0.2);
-            position: relative;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--primary), transparent);
-        }
-
-        footer p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
+            border-top: 1px solid var(--primary);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
             margin: 1rem 0;
         }
 
         .social-links a {
             color: var(--light);
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
             color: var(--primary);
-            transform: translateY(-3px);
-            text-shadow: 0 0 10px var(--primary);
         }
 
         /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
+        @media (max-width: 600px) {
             section {
-                padding: 2rem 1rem;
-                margin: 1rem;
+                padding: 1.5rem 0.8rem;
             }
             
-            nav {
-                gap: 0.8rem;
-            }
-
-            .project-gallery {
+            .project-gallery, .leadership, .contact-methods {
                 grid-template-columns: 1fr;
             }
-
+            
             .btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.9rem;
+                width: 100%;
+                margin: 0.3rem 0;
             }
-        }
-
-        /* Special effects */
-        .particle {
-            position: fixed;
-            background: var(--primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Animated background elements */
-        .circuit-node {
-            position: fixed;
-            width: 2px;
-            height: 2px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 5px 1px var(--primary);
-            z-index: -1;
-            opacity: 0.7;
-        }
-
-        /* Loading animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--darker);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader::after {
-            content: "";
-            width: 60px;
-            height: 60px;
-            border: 5px solid transparent;
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--darker);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00c8d4;
+            
+            .btn-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="loader"></div>
-
     <header>
         <h1>Embedded Systems and Robotics Nigeria</h1>
         <p>ESR-Nig. | Lion Science Park, University of Nigeria Nsukka</p>
@@ -583,7 +281,6 @@
             <a href="#vision"><i class="fas fa-eye"></i> Vision</a>
             <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
             <a href="#curriculum"><i class="fas fa-graduation-cap"></i> Curriculum</a>
-            <a href="#leadership"><i class="fas fa-users"></i> Leadership</a>
             <a href="#contact"><i class="fas fa-comment-dots"></i> Contact</a>
         </nav>
     </header>
@@ -591,275 +288,159 @@
     <section id="about">
         <h2>About ESR-Nig.</h2>
         <p>Alleviating Technology Depravity in Nigeria by Developing STEM Students' skill-set in Embedded Systems and Robotics.</p>
-        <p>Nigeria, and indeed much of the African continent, faces a significant depravity in technological development. While the global landscape rapidly advances, many African nations struggle with limited access to cutting-edge technologies, insufficient infrastructure, and a reliance on externally developed solutions that often fail to address unique local challenges.</p>
-        <p>Embedded Systems and Robotics Nigeria (ESR-Nig.) is driven by a passionate commitment to rectify this imbalance. Recognizing the immense potential within African youth, ESR-Nig. aims to cultivate a generation of innovators capable of driving technological advancement from within. By providing targeted education, practical experience, and fostering a culture of resilience, ESR-Nig. seeks to empower Nigerian students to become the architects of their own technological future.</p>
+        <p>Nigeria, and indeed much of Africa, faces significant technological development challenges. ESR-Nig. aims to cultivate innovators capable of driving technological advancement from within Africa.</p>
         
         <div class="btn-group">
             <a href="#vision" class="btn">Our Vision</a>
-            <a href="#contact" class="btn btn-accent">Join Us</a>
+            <a href="#contact" class="btn">Join Us</a>
         </div>
     </section>
 
     <section id="vision">
         <h2>Our Vision & Objectives</h2>
-        <p>ESR-Nig. is dedicated to fostering a new era of Nigerian technological innovation. We believe that Nigeria possesses the inherent capacity to address its own technological challenges, rather than depending on solutions designed for other contexts.</p>
+        <p>ESR-Nig. is dedicated to fostering Nigerian technological innovation with solutions designed for African contexts.</p>
         
-        <h3>Our Long-term Objectives:</h3>
+        <h3>Our Objectives:</h3>
         <ul>
-            <li><strong>Indigenous Technology:</strong> Developing locally manufactured consumer electronics including smartphones, IoT devices, and smart home systems.</li>
-            <li><strong>Advanced Mobility:</strong> Designing and building vehicles, aircraft, and autonomous systems specifically for African terrain and needs.</li>
-            <li><strong>Innovation Ecosystem:</strong> Creating smart systems and electronics for vehicles, airplanes, and other innovations that align with our cultural and technological requirements.</li>
-            <li><strong>Educational Transformation:</strong> Evolving into a fully-equipped physical structure with advanced labs and workshops for hands-on learning.</li>
-        </ul>
-        
-        <h3>Importance to Students:</h3>
-        <ul>
-            <li><strong>Bridging the Practical Knowledge Gap:</strong> Moving beyond theoretical learning to active participation and deeper understanding.</li>
-            <li><strong>Job Market Preparedness:</strong> Equipping students with in-demand skills in embedded systems and robotics for the automation age.</li>
-            <li><strong>Local Problem Solving:</strong> Empowering students to create solutions for Nigeria's and Africa's unique challenges.</li>
-            <li><strong>Building an Innovation Legacy:</strong> Positioning Nigeria as a hub of technological innovation attracting global recognition.</li>
+            <li><strong>Indigenous Technology:</strong> Developing locally manufactured electronics and smart devices</li>
+            <li><strong>Advanced Mobility:</strong> Designing vehicles and systems for African terrain</li>
+            <li><strong>Educational Transformation:</strong> Creating advanced labs for hands-on learning</li>
         </ul>
     </section>
 
     <section id="projects">
         <h2>Our Projects</h2>
-        <p>Explore some of our innovative projects that demonstrate our capabilities in embedded systems and robotics:</p>
+        <p>Explore our innovative projects in embedded systems and robotics:</p>
         
         <div class="project-gallery">
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Robotic Arm Project" class="project-img">
+                <div class="project-img" style="background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);"></div>
                 <div class="project-info">
                     <h3>Industrial Robotic Arm</h3>
-                    <p>A 6-axis robotic arm designed for small-scale manufacturing applications in Nigeria.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Robotics</span>
-                        <span class="project-tag">Automation</span>
-                        <span class="project-tag">Industry 4.0</span>
-                    </div>
+                    <p>6-axis robotic arm for small-scale manufacturing applications</p>
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Agriculture System" class="project-img">
+                <div class="project-img" style="background: linear-gradient(45deg, #11998e, #38ef7d);"></div>
                 <div class="project-info">
-                    <h3>Smart Agriculture System</h3>
-                    <p>IoT-enabled solution for precision farming tailored to Nigerian agricultural conditions.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">IoT</span>
-                        <span class="project-tag">Agriculture</span>
-                        <span class="project-tag">Sensors</span>
-                    </div>
+                    <h3>Smart Agriculture</h3>
+                    <p>IoT solution for precision farming in Nigeria</p>
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Autonomous Vehicle Platform" class="project-img">
+                <div class="project-img" style="background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);"></div>
                 <div class="project-info">
-                    <h3>Autonomous Vehicle Platform</h3>
-                    <p>Prototype for autonomous navigation systems adapted to Nigerian road conditions.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Autonomous Systems</span>
-                        <span class="project-tag">Computer Vision</span>
-                        <span class="project-tag">AI</span>
-                    </div>
+                    <h3>Autonomous Vehicle</h3>
+                    <p>Navigation systems adapted to Nigerian roads</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="btn-group">
-            <a href="#contact" class="btn">Request Project Details</a>
-            <a href="#curriculum" class="btn btn-accent">Learn Our Methods</a>
         </div>
     </section>
 
     <section id="curriculum">
-        <h2>Our Comprehensive Curriculum</h2>
-        <p>ESR-Nig. offers a comprehensive, multi-tiered curriculum designed to equip students with robust understanding of embedded systems and robotics, from fundamental principles to advanced applications.</p>
+        <h2>Our Curriculum</h2>
+        <p>Comprehensive training from fundamentals to advanced applications:</p>
         
         <div class="project-gallery">
             <div class="project-card">
                 <div class="project-info">
-                    <h3>Foundational Courses</h3>
+                    <h3>Foundations</h3>
                     <ul>
-                        <li>Core concepts in embedded systems</li>
-                        <li>Electronics fundamentals</li>
-                        <li>Programming (C/C++, Python)</li>
-                        <li>Robotics basics</li>
+                        <li>Embedded systems</li>
+                        <li>Electronics</li>
+                        <li>C/C++ programming</li>
                     </ul>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-info">
-                    <h3>Intermediate Skills</h3>
+                    <h3>Intermediate</h3>
                     <ul>
-                        <li>Microcontroller programming</li>
-                        <li>Sensor and actuator integration</li>
-                        <li>Communication protocols</li>
-                        <li>Real-time operating systems</li>
-                        <li>IoT systems</li>
+                        <li>Microcontrollers</li>
+                        <li>Sensors & IoT</li>
+                        <li>Real-time systems</li>
                     </ul>
                 </div>
             </div>
             
             <div class="project-card">
                 <div class="project-info">
-                    <h3>Advanced Topics</h3>
+                    <h3>Advanced</h3>
                     <ul>
-                        <li>Robotics and AI integration</li>
-                        <li>Edge computing</li>
+                        <li>Robotics & AI</li>
                         <li>FPGA programming</li>
-                        <li>CPU/GPU design</li>
                         <li>Autonomous systems</li>
-                        <li>Advanced sensor fusion</li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Practical Applications</h3>
-                    <ul>
-                        <li>Computer-Aided Design (CAD)</li>
-                        <li>PCB design</li>
-                        <li>3D mechanical design</li>
-                        <li>Capstone projects</li>
-                        <li>Industry internships</li>
-                        <li>Entrepreneurship training</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="btn-group">
-            <a href="#contact" class="btn btn-accent">Enroll Now</a>
-            <a href="#leadership" class="btn">Meet Our Team</a>
-        </div>
-    </section>
-
-    <section id="leadership">
-        <h2>Our Leadership</h2>
-        <p>ESR-Nig. is under the capable leadership of visionary professionals committed to technological advancement in Nigeria:</p>
-        
-        <div class="leadership">
-            <div class="leader-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Victor Ogbonna" class="leader-img">
-                <h3>Victor Ogbonna</h3>
-                <p class="leader-title">Founder and CEO</p>
-                <p>Expert in microcontroller programming, embedded system design, and robotics integration. Drives the strategic direction and innovation of ESR-Nig.</p>
-                <a href="mailto:victorogbonna313@gmail.com" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Contact</a>
-            </div>
-            
-            <div class="leader-card">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Grace Ajiboye" class="leader-img">
-                <h3>Grace Ajiboye</h3>
-                <p class="leader-title">General Manager</p>
-                <p>Brings exceptional proficiency in financial management, team leadership, strategic communication, and decisive problem-solving to drive operational excellence.</p>
-                <a href="#contact" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Contact</a>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact ESR-Nig.</h2>
-        <p>Get in touch with us to learn more about our programs, collaborate on projects, or explore partnership opportunities.</p>
+        <h2>Contact Us</h2>
         
         <div class="contact-methods">
             <div class="contact-method">
                 <i class="fas fa-envelope"></i>
                 <h3>Email</h3>
                 <p>esrnigeria@gmail.com</p>
-                <p>victorogbonna313@gmail.com (CEO)</p>
-                <a href="mailto:esrnigeria@gmail.com" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Send Email</a>
+                <a href="mailto:esrnigeria@gmail.com" class="btn">Send Email</a>
             </div>
             <div class="contact-method">
                 <i class="fas fa-map-marker-alt"></i>
                 <h3>Location</h3>
-                <p>Lion Science Park</p>
-                <p>University of Nigeria Nsukka</p>
-                <a href="#" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Get Directions</a>
+                <p>Lion Science Park, UNN</p>
+                <a href="#" class="btn">Get Directions</a>
             </div>
             <div class="contact-method">
                 <i class="fas fa-phone-alt"></i>
                 <h3>Phone</h3>
                 <p>+234 903 649 4405</p>
-                <p>Monday - Friday, 9am - 5pm</p>
-                <a href="tel:+2349036494405" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Call Now</a>
-            </div>
-            <div class="contact-method">
-                <i class="fas fa-users"></i>
-                <h3>Connect With Us</h3>
-                <p>Follow our social media for updates on projects and events</p>
-                <div class="social-links" style="margin-top: 1rem;">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+                <a href="tel:+2349036494405" class="btn">Call Now</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <p>&copy; 2025 <span style="color: var(--primary);">Embedded Systems and Robotics Nigeria (ESR-Nig.)</span> | Empowering the Future of African Technology</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Lion Science Park, University of Nigeria Nsukka | Established March 2025</p>
+        <p>&copy; 2025 Embedded Systems and Robotics Nigeria</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Lion Science Park, University of Nigeria Nsukka</p>
     </footer>
 
     <script>
-        // Remove loader when page is loaded
-        window.addEventListener('load', function() {
-            const loader = document.querySelector('.loader');
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
+        // Improved image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load images if they exist
+            const images = document.querySelectorAll('img[data-src]');
             
-            // Create circuit node background elements
-            createCircuitNodes();
-            
-            // Particle effect on mouse move
-            initParticles();
-        });
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
 
-        // Create animated circuit nodes in background
-        function createCircuitNodes() {
-            const colors = ['#00f0ff', '#ff2d75', '#ffcc00', '#ffffff'];
-            const body = document.body;
-            const nodeCount = 30;
-            
-            for (let i = 0; i < nodeCount; i++) {
-                const node = document.createElement('div');
-                node.className = 'circuit-node';
-                
-                // Random properties
-                const size = Math.random() * 3 + 1;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const duration = Math.random() * 10 + 10;
-                const delay = Math.random() * 5;
-                
-                // Apply styles
-                node.style.width = `${size}px`;
-                node.style.height = `${size}px`;
-                node.style.background = color;
-                node.style.boxShadow = `0 0 ${size * 2}px ${size}px ${color}`;
-                node.style.left = `${posX}%`;
-                node.style.top = `${posY}%`;
-                node.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
-                
-                // Add to body
-                body.appendChild(node);
+                images.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
             }
-            
-            // Add keyframes for floating animation
-            const style = document.createElement('style');
-            style.innerHTML = `
-                @keyframes float {
-                    0%, 100% { transform: translate(0, 0);
+        });
+    </script>
+</body>
+</html>
