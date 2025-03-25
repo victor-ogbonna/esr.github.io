@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background: linear-gradient(120deg, #1a1f3d, #ff5e78);
+            color: #f4f4f4;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -38,12 +38,16 @@
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            margin: 10px;
         }
 
         h1, h2, h3 {
-            color: #0056b3;
+            color: #ffa500;
             animation: mechMove 1.5s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px #fff;
         }
 
         @keyframes mechMove {
