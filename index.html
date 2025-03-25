@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Robotics | Embedded Systems & AI Solutions - Nigeria</title>
+    <title>Embedded Systems and Robotics Nigeria | ESR-Nig.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -112,6 +112,12 @@
             content: "//";
             color: var(--secondary);
             margin: 0 10px;
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
 
         nav {
@@ -255,12 +261,154 @@
             font-weight: 500;
         }
 
+        /* Project Gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 0.5rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--darker);
+            border-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        /* Leadership section */
+        .leadership {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .leader-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .leader-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .leader-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .leader-title {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
         /* Contact section with interactive elements */
-        #contact {
+        .contact-methods {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            text-align: left;
+            margin-top: 2rem;
         }
 
         .contact-method {
@@ -269,6 +417,7 @@
             border-radius: 8px;
             border: 1px solid rgba(0, 240, 255, 0.2);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .contact-method:hover {
@@ -340,6 +489,15 @@
             
             nav {
                 gap: 0.8rem;
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -418,71 +576,227 @@
     <div class="loader"></div>
 
     <header>
-        <h1>Nexus Robotics</h1>
-        <p>Embedded Systems & AI Solutions | Nigeria</p>
+        <h1>Embedded Systems and Robotics Nigeria</h1>
+        <p>ESR-Nig. | Lion Science Park, University of Nigeria Nsukka</p>
         <nav>
             <a href="#about"><i class="fas fa-robot"></i> About</a>
             <a href="#vision"><i class="fas fa-eye"></i> Vision</a>
+            <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
             <a href="#curriculum"><i class="fas fa-graduation-cap"></i> Curriculum</a>
+            <a href="#leadership"><i class="fas fa-users"></i> Leadership</a>
             <a href="#contact"><i class="fas fa-comment-dots"></i> Contact</a>
         </nav>
     </header>
 
     <section id="about">
-        <h2>Introduction</h2>
+        <h2>About ESR-Nig.</h2>
         <p>Alleviating Technology Depravity in Nigeria by Developing STEM Students' skill-set in Embedded Systems and Robotics.</p>
-        <p>We aim to empower Nigerian students to drive technological advancement by providing practical education and fostering innovation through hands-on experience with cutting-edge technologies.</p>
-        <div style="text-align: center; margin-top: 2rem;">
-            <div style="display: inline-block; padding: 1rem 2rem; background: rgba(0, 240, 255, 0.1); border: 1px solid var(--primary); border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">
-                <span style="color: var(--primary);">Explore Our Projects <i class="fas fa-arrow-right"></i></span>
-            </div>
+        <p>Nigeria, and indeed much of the African continent, faces a significant depravity in technological development. While the global landscape rapidly advances, many African nations struggle with limited access to cutting-edge technologies, insufficient infrastructure, and a reliance on externally developed solutions that often fail to address unique local challenges.</p>
+        <p>Embedded Systems and Robotics Nigeria (ESR-Nig.) is driven by a passionate commitment to rectify this imbalance. Recognizing the immense potential within African youth, ESR-Nig. aims to cultivate a generation of innovators capable of driving technological advancement from within. By providing targeted education, practical experience, and fostering a culture of resilience, ESR-Nig. seeks to empower Nigerian students to become the architects of their own technological future.</p>
+        
+        <div class="btn-group">
+            <a href="#vision" class="btn">Our Vision</a>
+            <a href="#contact" class="btn btn-accent">Join Us</a>
         </div>
     </section>
 
     <section id="vision">
-        <h2>Our Vision</h2>
-        <p>We envision a future where Nigeria becomes a global hub of technological innovation, producing homegrown solutions tailored to Africa's unique challenges through advanced robotics and embedded systems.</p>
+        <h2>Our Vision & Objectives</h2>
+        <p>ESR-Nig. is dedicated to fostering a new era of Nigerian technological innovation. We believe that Nigeria possesses the inherent capacity to address its own technological challenges, rather than depending on solutions designed for other contexts.</p>
+        
+        <h3>Our Long-term Objectives:</h3>
         <ul>
-            <li><strong>Indigenous Technology:</strong> Develop locally manufactured consumer electronics including smartphones, IoT devices, and smart home systems.</li>
-            <li><strong>Advanced Mobility:</strong> Design and build next-generation vehicles, aircraft, and autonomous systems for African terrain.</li>
-            <li><strong>Innovation Ecosystem:</strong> Foster a sustainable environment for technological entrepreneurship and problem-solving.</li>
-            <li><strong>AI Integration:</strong> Pioneer artificial intelligence applications specifically designed for African contexts and challenges.</li>
+            <li><strong>Indigenous Technology:</strong> Developing locally manufactured consumer electronics including smartphones, IoT devices, and smart home systems.</li>
+            <li><strong>Advanced Mobility:</strong> Designing and building vehicles, aircraft, and autonomous systems specifically for African terrain and needs.</li>
+            <li><strong>Innovation Ecosystem:</strong> Creating smart systems and electronics for vehicles, airplanes, and other innovations that align with our cultural and technological requirements.</li>
+            <li><strong>Educational Transformation:</strong> Evolving into a fully-equipped physical structure with advanced labs and workshops for hands-on learning.</li>
         </ul>
+        
+        <h3>Importance to Students:</h3>
+        <ul>
+            <li><strong>Bridging the Practical Knowledge Gap:</strong> Moving beyond theoretical learning to active participation and deeper understanding.</li>
+            <li><strong>Job Market Preparedness:</strong> Equipping students with in-demand skills in embedded systems and robotics for the automation age.</li>
+            <li><strong>Local Problem Solving:</strong> Empowering students to create solutions for Nigeria's and Africa's unique challenges.</li>
+            <li><strong>Building an Innovation Legacy:</strong> Positioning Nigeria as a hub of technological innovation attracting global recognition.</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <p>Explore some of our innovative projects that demonstrate our capabilities in embedded systems and robotics:</p>
+        
+        <div class="project-gallery">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Robotic Arm Project" class="project-img">
+                <div class="project-info">
+                    <h3>Industrial Robotic Arm</h3>
+                    <p>A 6-axis robotic arm designed for small-scale manufacturing applications in Nigeria.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Robotics</span>
+                        <span class="project-tag">Automation</span>
+                        <span class="project-tag">Industry 4.0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart Agriculture System" class="project-img">
+                <div class="project-info">
+                    <h3>Smart Agriculture System</h3>
+                    <p>IoT-enabled solution for precision farming tailored to Nigerian agricultural conditions.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">IoT</span>
+                        <span class="project-tag">Agriculture</span>
+                        <span class="project-tag">Sensors</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Autonomous Vehicle Platform" class="project-img">
+                <div class="project-info">
+                    <h3>Autonomous Vehicle Platform</h3>
+                    <p>Prototype for autonomous navigation systems adapted to Nigerian road conditions.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Autonomous Systems</span>
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-group">
+            <a href="#contact" class="btn">Request Project Details</a>
+            <a href="#curriculum" class="btn btn-accent">Learn Our Methods</a>
+        </div>
     </section>
 
     <section id="curriculum">
         <h2>Our Comprehensive Curriculum</h2>
-        <ul>
-            <li><strong>Foundational Courses:</strong> Electronics fundamentals, C/C++ programming, Python for robotics, and mechanical design basics.</li>
-            <li><strong>Intermediate Skills:</strong> Microcontroller programming (ARM, AVR, PIC), sensor integration, IoT protocols, and real-time systems.</li>
-            <li><strong>Advanced Topics:</strong> Machine learning for embedded systems, edge computing, FPGA development, and autonomous navigation.</li>
-            <li><strong>Design & Simulation:</strong> Professional PCB design (Altium, KiCAD), 3D mechanical design (SolidWorks, Fusion 360), and system simulation.</li>
-            <li><strong>Capstone Projects:</strong> Industry-sponsored projects, startup incubation, and commercial product development opportunities.</li>
-        </ul>
+        <p>ESR-Nig. offers a comprehensive, multi-tiered curriculum designed to equip students with robust understanding of embedded systems and robotics, from fundamental principles to advanced applications.</p>
+        
+        <div class="project-gallery">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Foundational Courses</h3>
+                    <ul>
+                        <li>Core concepts in embedded systems</li>
+                        <li>Electronics fundamentals</li>
+                        <li>Programming (C/C++, Python)</li>
+                        <li>Robotics basics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Intermediate Skills</h3>
+                    <ul>
+                        <li>Microcontroller programming</li>
+                        <li>Sensor and actuator integration</li>
+                        <li>Communication protocols</li>
+                        <li>Real-time operating systems</li>
+                        <li>IoT systems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Advanced Topics</h3>
+                    <ul>
+                        <li>Robotics and AI integration</li>
+                        <li>Edge computing</li>
+                        <li>FPGA programming</li>
+                        <li>CPU/GPU design</li>
+                        <li>Autonomous systems</li>
+                        <li>Advanced sensor fusion</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Practical Applications</h3>
+                    <ul>
+                        <li>Computer-Aided Design (CAD)</li>
+                        <li>PCB design</li>
+                        <li>3D mechanical design</li>
+                        <li>Capstone projects</li>
+                        <li>Industry internships</li>
+                        <li>Entrepreneurship training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-group">
+            <a href="#contact" class="btn btn-accent">Enroll Now</a>
+            <a href="#leadership" class="btn">Meet Our Team</a>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2>Our Leadership</h2>
+        <p>ESR-Nig. is under the capable leadership of visionary professionals committed to technological advancement in Nigeria:</p>
+        
+        <div class="leadership">
+            <div class="leader-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Victor Ogbonna" class="leader-img">
+                <h3>Victor Ogbonna</h3>
+                <p class="leader-title">Founder and CEO</p>
+                <p>Expert in microcontroller programming, embedded system design, and robotics integration. Drives the strategic direction and innovation of ESR-Nig.</p>
+                <a href="mailto:victorogbonna313@gmail.com" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Contact</a>
+            </div>
+            
+            <div class="leader-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Grace Ajiboye" class="leader-img">
+                <h3>Grace Ajiboye</h3>
+                <p class="leader-title">General Manager</p>
+                <p>Brings exceptional proficiency in financial management, team leadership, strategic communication, and decisive problem-solving to drive operational excellence.</p>
+                <a href="#contact" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Contact</a>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-method">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>esrnigeria@gmail.com</p>
-        </div>
-        <div class="contact-method">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>Location</h3>
-            <p>Lion Science Park, University of Nigeria Nsukka</p>
-        </div>
-        <div class="contact-method">
-            <i class="fas fa-phone-alt"></i>
-            <h3>Phone</h3>
-            <p>+234 903 649 4405</p>
-        </div>
-        <div class="contact-method">
-            <i class="fas fa-users"></i>
-            <h3>Leadership</h3>
-            <p>CEO: Victor Ogbonna</p>
-            <p>General Manager: Grace Ajiboye</p>
+        <h2>Contact ESR-Nig.</h2>
+        <p>Get in touch with us to learn more about our programs, collaborate on projects, or explore partnership opportunities.</p>
+        
+        <div class="contact-methods">
+            <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>esrnigeria@gmail.com</p>
+                <p>victorogbonna313@gmail.com (CEO)</p>
+                <a href="mailto:esrnigeria@gmail.com" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Send Email</a>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Lion Science Park</p>
+                <p>University of Nigeria Nsukka</p>
+                <a href="#" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Get Directions</a>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p>+234 903 649 4405</p>
+                <p>Monday - Friday, 9am - 5pm</p>
+                <a href="tel:+2349036494405" class="btn" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Call Now</a>
+            </div>
+            <div class="contact-method">
+                <i class="fas fa-users"></i>
+                <h3>Connect With Us</h3>
+                <p>Follow our social media for updates on projects and events</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -493,8 +807,8 @@
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>&copy; 2025 <span style="color: var(--primary);">Nexus Robotics</span> | Empowering the Future of African Technology</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Innovating for a Smarter Tomorrow</p>
+        <p>&copy; 2025 <span style="color: var(--primary);">Embedded Systems and Robotics Nigeria (ESR-Nig.)</span> | Empowering the Future of African Technology</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Lion Science Park, University of Nigeria Nsukka | Established March 2025</p>
     </footer>
 
     <script>
@@ -548,49 +862,4 @@
             const style = document.createElement('style');
             style.innerHTML = `
                 @keyframes float {
-                    0%, 100% { transform: translate(0, 0); opacity: 0.7; }
-                    25% { transform: translate(10px, -10px); opacity: 0.9; }
-                    50% { transform: translate(-5px, 5px); opacity: 0.6; }
-                    75% { transform: translate(5px, -5px); opacity: 0.8; }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
-        // Particle effect following mouse
-        function initParticles() {
-            const particles = [];
-            const colors = ['#00f0ff', '#ff2d75', '#ffcc00'];
-            
-            document.addEventListener('mousemove', (e) => {
-                for (let i = 0; i < 3; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    
-                    const size = Math.random() * 5 + 2;
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particle.style.background = color;
-                    particle.style.boxShadow = `0 0 ${size * 2}px ${size}px ${color}`;
-                    particle.style.left = `${e.clientX}px`;
-                    particle.style.top = `${e.clientY}px`;
-                    
-                    document.body.appendChild(particle);
-                    particles.push(particle);
-                    
-                    // Remove particle after animation
-                    setTimeout(() => {
-                        particle.style.opacity = '0';
-                        particle.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
-                        setTimeout(() => {
-                            particle.remove();
-                        }, 300);
-                    }, 1000);
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+                    0%, 100% { transform: translate(0, 0);
